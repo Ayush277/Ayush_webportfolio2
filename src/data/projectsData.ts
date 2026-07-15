@@ -1,46 +1,37 @@
 import type { ComponentType } from "react";
-import { Network, Search } from "lucide-react";
 import {
   SiNextdotjs,
   SiTypescript,
   SiReact,
-  SiThreedotjs,
-  SiPrisma,
-  SiCloudflare,
-  SiLangchain,
   SiNodedotjs,
-  SiFramer,
   SiTailwindcss,
-  SiBun,
-  SiEslint,
-  SiRadixui,
-  SiChartdotjs,
-  SiGithub,
   SiFastapi,
   SiRedis,
   SiCelery,
-  SiTldraw,
-  SiCss,
   SiPython,
-  SiAnthropic,
-  SiClaude,
-  SiGooglegemini,
-  SiMeta,
-  SiMongodb,
-  SiTensorflow,
-  SiPandas,
-  SiNumpy,
-  SiOpenai,
+  SiFlask,
+  SiScikitlearn,
+  SiOnnx,
+  SiVercel,
+  SiJupyter,
+  SiSpring,
+  SiOpenjdk,
+  SiGradle,
+  SiPostgresql,
+  SiWxt,
+  SiGooglechrome,
+  SiHuggingface,
 } from "react-icons/si";
 
 export type TechIcon = ComponentType<{ className?: string }>;
 export type TechKey =
-  | "next" | "ts" | "react" | "three" | "prisma" | "cloud" | "langchain" | "langgraph" | "rag"
-  | "node" | "motion" | "tailwind" | "bun" | "eslint" | "radixui" | "charts" | "github" | "fastapi"
-  | "redis" | "celery" | "tldraw" | "css3" | "python" | "anthropic" | "claude" | "gemini" | "llama"
-  | "mongodb" | "tensorflow" | "pandas" | "numpy" | "openai";
+  | "next" | "ts" | "react" | "node" | "tailwind" | "fastapi" | "redis" | "celery"
+  | "python" | "flask" | "sklearn" | "onnx" | "vercel" | "jupyter"
+  | "spring" | "java" | "gradle" | "postgres" | "wxt" | "chrome" | "huggingface";
 
 export type TechItem = TechKey | { label: string; tooltip?: string; };
+
+export type ProjectStatus = "live" | "building" | "planned";
 
 export interface Project {
   slug: string;
@@ -53,72 +44,90 @@ export interface Project {
   tech: TechItem[];
   github: string;
   live: string;
+  docs: string;
+  status: ProjectStatus;
   starsText?: string;
   backgroundImage?: string;
   hasPin: boolean;
 }
 
 export const iconMap: Record<TechKey, TechIcon> = {
-  next: SiNextdotjs, ts: SiTypescript, react: SiReact, three: SiThreedotjs, prisma: SiPrisma,
-  cloud: SiCloudflare, langchain: SiLangchain, langgraph: Network, rag: Search, node: SiNodedotjs,
-  motion: SiFramer, tailwind: SiTailwindcss, bun: SiBun, eslint: SiEslint, radixui: SiRadixui,
-  charts: SiChartdotjs, github: SiGithub, fastapi: SiFastapi, redis: SiRedis, celery: SiCelery,
-  tldraw: SiTldraw, css3: SiCss, python: SiPython, anthropic: SiAnthropic, claude: SiClaude,
-  gemini: SiGooglegemini, llama: SiMeta, mongodb: SiMongodb, tensorflow: SiTensorflow,
-  pandas: SiPandas, numpy: SiNumpy, openai: SiOpenai,
+  next: SiNextdotjs, ts: SiTypescript, react: SiReact, node: SiNodedotjs,
+  tailwind: SiTailwindcss, fastapi: SiFastapi, redis: SiRedis, celery: SiCelery,
+  python: SiPython, flask: SiFlask, sklearn: SiScikitlearn, onnx: SiOnnx,
+  vercel: SiVercel, jupyter: SiJupyter, spring: SiSpring, java: SiOpenjdk,
+  gradle: SiGradle, postgres: SiPostgresql, wxt: SiWxt, chrome: SiGooglechrome,
+  huggingface: SiHuggingface,
 };
 
 export const techNames: Record<TechKey, string> = {
-  next: "Next.js", ts: "TypeScript", react: "React", three: "Three.js", prisma: "Prisma",
-  cloud: "Cloudflare", langchain: "LangChain", langgraph: "LangGraph", rag: "RAG",
-  node: "Node.js", motion: "Framer Motion", tailwind: "Tailwind CSS", bun: "Bun", eslint: "ESLint",
-  radixui: "Radix UI", charts: "Charts", github: "GitHub API", fastapi: "FastAPI", redis: "Redis",
-  celery: "Celery", tldraw: "tldraw", css3: "CSS3", python: "Python", anthropic: "Anthropic",
-  claude: "Claude", gemini: "Gemini", llama: "LLaMA", mongodb: "MongoDB", tensorflow: "TensorFlow",
-  pandas: "Pandas", numpy: "NumPy", openai: "LLMs",
+  next: "Next.js", ts: "TypeScript", react: "React", node: "Node.js",
+  tailwind: "Tailwind CSS", fastapi: "FastAPI", redis: "Redis", celery: "Celery",
+  python: "Python", flask: "Flask", sklearn: "scikit-learn", onnx: "ONNX Runtime",
+  vercel: "Vercel", jupyter: "Jupyter", spring: "Spring Boot", java: "Java 21",
+  gradle: "Gradle", postgres: "PostgreSQL", wxt: "WXT", chrome: "Chrome Extension (MV3)",
+  huggingface: "transformers.js",
 };
 
 export const projectsData: Project[] = [
   {
-    slug: "meetstream-ai",
-    title: "MeetStream AI",
-    imageTitle: "Meeting Intelligence",
-    src: "",
-    lightModeSrc: "",
+    slug: "samsung-prism-worklet-8",
+    title: "Samsung PRISM — Worklet 8",
+    imageTitle: "Financing, Campaign & Sales Intelligence",
+    src: "/projects/samsung-dashboard.png",
     video: "",
-    description: "AI meeting assistant that captures conversations and generates summaries, action items and insights using speech-to-text and LLMs.",
-    tech: ["react", "fastapi", "python", "mongodb", "openai"],
-    github: "https://github.com/Ayush277",
-    live: "",
-    backgroundImage: "",
+    description: "ML intelligence dashboard serving three trained models in real time — loan delinquency risk (RandomForest, AUC 0.72), campaign performance (CatBoost · LightGBM · Ridge) and sell-out forecasting (XGBoost). Models are exported to ONNX in CI with drift-verified builds and run live on Vercel.",
+    tech: ["python", "jupyter", "sklearn", "onnx", "flask", "vercel"],
+    github: "https://github.com/Ayush277/Samsung-Dashboard-worklet-8",
+    live: "https://samsung-dashboard-worklet-8.vercel.app",
+    docs: "https://samsung-dashboard-worklet-8.vercel.app/docs",
+    status: "live",
+    backgroundImage: "/projects/samsung-dashboard.png",
     hasPin: true,
   },
   {
-    slug: "decision-analytics",
-    title: "Decision Analytics Platform",
-    imageTitle: "BI Dashboard",
-    src: "",
-    lightModeSrc: "",
+    slug: "nomi",
+    title: "Nomi",
+    imageTitle: "Your Digital Companion",
+    src: "/projects/nomi-landing.png",
     video: "",
-    description: "Business-intelligence platform unifying forecasting, risk analysis and reporting into one decision-support dashboard over 100K+ records.",
-    tech: ["python", "tensorflow", "pandas", "charts", "openai"],
-    github: "https://github.com/Ayush277",
+    description: "An AI companion that lives beside your browser — a floating glass avatar that learns your habits, builds a daily memory of your work and answers questions like \"when did I last study graphs?\". Local-first: on-device inference with transformers.js, encrypted storage, no cloud recording.",
+    tech: ["ts", "react", "wxt", "chrome", "huggingface"],
+    github: "https://github.com/Ayush277/nomi",
     live: "",
-    backgroundImage: "",
+    docs: "https://github.com/Ayush277/nomi/tree/main/docs",
+    status: "live",
+    backgroundImage: "/projects/nomi-dashboard.png",
+    hasPin: true,
+  },
+  {
+    slug: "loopjob",
+    title: "LoopJob",
+    imageTitle: "Never Miss Another Opening",
+    src: "/projects/looper.png",
+    video: "",
+    description: "A personal always-on agent that monitors company career portals, discovers matching jobs across the indexed job market and semantically matches them against your filters — then emails you new openings, deduplicated, with the reason each one matched.",
+    tech: ["next", "ts", "fastapi", "celery", "postgres", "redis"],
+    github: "https://github.com/Ayush277/Looper",
+    live: "",
+    docs: "https://github.com/Ayush277/Looper/blob/main/docs/00-INDEX.md",
+    status: "live",
+    backgroundImage: "/projects/looper-discovery.png",
     hasPin: false,
   },
   {
-    slug: "time-to-stress",
-    title: "Time-to-Stress Prediction",
-    imageTitle: "Research - Precision Agriculture",
-    src: "",
-    lightModeSrc: "",
+    slug: "rate-limiter",
+    title: "Rate Limiter",
+    imageTitle: "Distributed API Rate Limiting",
+    src: "/projects/rate-limiter.png",
     video: "",
-    description: "A dual-head BiLSTM with SHAP-based temporal attention for time-to-stress prediction. Reviewer, SMM4H-HeaRD 2026.",
-    tech: ["python", "tensorflow", "numpy", "charts"],
-    github: "https://github.com/Ayush277",
+    description: "Distributed API rate-limiting service on Spring Boot 4 and Redis — token-bucket and sliding-window strategies backed by atomic Redis operations, so limits stay consistent across service instances.",
+    tech: ["java", "spring", "redis", "gradle"],
+    github: "https://github.com/Ayush277/Rate-Limiter",
     live: "",
-    backgroundImage: "",
+    docs: "",
+    status: "live",
+    backgroundImage: "/projects/rate-limiter.png",
     hasPin: false,
   },
 ];

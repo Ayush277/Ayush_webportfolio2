@@ -154,10 +154,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           {/* Vertical Divider 2 */}
           <div className="hidden md:block absolute left-2/3 top-0 bottom-0 w-0 border-l border-black/30 dark:border-white/[0.15] pointer-events-none" style={{ maskImage: 'repeating-linear-gradient(to bottom, black 0, black 1px, transparent 1px, transparent 6px)', WebkitMaskImage: 'repeating-linear-gradient(to bottom, black 0, black 1px, transparent 1px, transparent 6px)' }} />
 
-          <a href="#" className="hidden md:flex items-center justify-center gap-2 text-[13px] font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="9" x2="15" y1="9" y2="9"/><line x1="9" x2="15" y1="15" y2="15"/></svg>
-            Post
-          </a>
+          {project.docs ? (
+            <a href={project.docs} target="_blank" rel="noopener noreferrer" className="hidden md:flex items-center justify-center gap-2 text-[13px] font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="9" x2="15" y1="9" y2="9"/><line x1="9" x2="15" y1="15" y2="15"/></svg>
+              Docs
+            </a>
+          ) : <div className="hidden md:block" />}
         </div>
 
         {/* Bottom Dashed Divider */}
@@ -174,10 +176,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           </h1>
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${project.status === "live" ? "bg-emerald-400" : project.status === "building" ? "bg-red-400" : "bg-zinc-400"}`}></span>
+              <span className={`relative inline-flex rounded-full h-2 w-2 ${project.status === "live" ? "bg-emerald-500" : project.status === "building" ? "bg-red-500" : "bg-zinc-400"}`}></span>
             </span>
-            <span className="text-[13px] font-medium text-emerald-600 dark:text-emerald-400">Live</span>
+            <span className={`text-[13px] font-medium ${project.status === "live" ? "text-emerald-600 dark:text-emerald-400" : project.status === "building" ? "text-red-600 dark:text-red-400" : "text-zinc-500 dark:text-zinc-400"}`}>
+              {project.status === "live" ? "Live" : project.status === "building" ? "Building" : "Planned"}
+            </span>
           </div>
         </div>
 
