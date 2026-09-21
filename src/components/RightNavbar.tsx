@@ -20,7 +20,7 @@ export function RightNavbar() {
       { rootMargin: "-20% 0px -60% 0px", threshold: 0.1 }
     );
 
-    const sections = ["experience", "projects", "leetcode", "skills", "achievements"];
+    const sections = ["experience", "projects", "leetcode", "skills", "achievements", "education"];
     sections.forEach((id) => {
       const element = document.getElementById(id);
       if (element) observer.observe(element);
@@ -35,6 +35,7 @@ export function RightNavbar() {
     { name: "LeetCode", href: "#leetcode" },
     { name: "Skills", href: "#skills" },
     { name: "Achievements", href: "#achievements" },
+    { name: "Education", href: "#education" },
   ];
 
   // Only render on the homepage where the #hash sections exist

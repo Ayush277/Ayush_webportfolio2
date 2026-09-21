@@ -13,29 +13,36 @@ import Link from "next/link";
 import SoftPillButton from "@/components/pixel-perfect/soft-pill-button";
 import SocialHoverCard from "@/components/pixel-perfect/social-hover-card";
 import { BannerParticles } from "@/components/BannerParticles";
-import { FileText } from "lucide-react";
+import { FileText, Cloud } from "lucide-react";
 import Image from "next/image";
 
 const skills = [
-  { name: "Python", icon: "python" },
+  // Languages
   { name: "C++", icon: "cplusplus" },
+  { name: "Python", icon: "python" },
+  { name: "Java", icon: "openjdk" },
   { name: "JavaScript", icon: "javascript" },
-  { name: "HTML", icon: "html5" },
-  { name: "CSS", icon: "css3" },
+  { name: "TypeScript", icon: "typescript" },
+  { name: "SQL", icon: "postgresql" },
+  // Frameworks
   { name: "React", icon: "react" },
+  { name: "Node.js", icon: "nodedotjs" },
+  { name: "Express.js", icon: "express" },
   { name: "FastAPI", icon: "fastapi" },
-  { name: "MySQL", icon: "mysql" },
+  { name: "Next.js", icon: "nextdotjs" },
+  // Databases
+  { name: "PostgreSQL", icon: "postgresql" },
   { name: "MongoDB", icon: "mongodb" },
-  { name: "TensorFlow", icon: "tensorflow" },
-  { name: "Pandas", icon: "pandas" },
-  { name: "NumPy", icon: "numpy" },
-  { name: "scikit-learn", icon: "scikitlearn" },
+  { name: "Redis", icon: "redis" },
+  // Cloud & DevOps
+  { name: "AWS", icon: "cloud" },
+  { name: "Docker", icon: "docker" },
+  { name: "Terraform", icon: "terraform" },
+  { name: "Jenkins", icon: "jenkins" },
+  // Tools & Practices
   { name: "Git", icon: "git" },
   { name: "GitHub", icon: "github" },
-  { name: "Docker", icon: "docker" },
-  { name: "Excel", icon: "microsoftexcel" },
-  { name: "PowerPoint", icon: "microsoftpowerpoint" },
-  { name: "Linux", icon: "linux" },
+  { name: "Postman", icon: "postman" },
 ];
 
 export default function Home() {
@@ -138,8 +145,23 @@ export default function Home() {
       {/* Flowing Content Section */}
       <div className="ml-0 mr-0 md:ml-[30%] md:mr-[30%] pt-[calc(22vh+112px)] pb-0 px-4 flex flex-col z-10 relative min-h-screen">
         <p className="text-[14px] sm:text-[15px] text-zinc-600 dark:text-zinc-300 leading-relaxed mt-4">
-          Software Engineer | AI Engineer | Product Engineer | Samsung PRISM Research Intern | 2&times; National Hackathon Winner | Building AI Agents, Developer Tools &amp; Intelligent Products
+          Software Engineer | AI/ML | Full-Stack Development | Samsung PRISM R&amp;D Intern | 2&times; National Hackathon Winner
         </p>
+
+        {/* Quick-profile stats */}
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-4">
+          {[
+            { value: "100K+", label: "Records" },
+            { value: "3", label: "ML Projects" },
+            { value: "250+", label: "DSA Problems" },
+            { value: "1596", label: "LeetCode Rating" },
+          ].map((stat, i) => (
+            <div key={i} className="flex items-baseline gap-1.5">
+              <span className="text-[14px] font-bold text-zinc-900 dark:text-zinc-100">{stat.value}</span>
+              <span className="text-[11px] text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">{stat.label}</span>
+            </div>
+          ))}
+        </div>
 
         {/* Buttons */}
         <div className="flex flex-wrap items-center gap-2 mt-4">
@@ -349,15 +371,19 @@ export default function Home() {
             <div className="flex flex-wrap gap-2 w-full">
               {skills.map((skill, index) => (
                 <div key={index} className="grow flex items-center justify-center gap-2 px-3 py-1.5 bg-zinc-50 hover:bg-zinc-100 dark:bg-[#0a0a0a] dark:hover:bg-[#121214] border border-black/30 dark:border-white/[0.15] rounded-[6px] transition-colors duration-200 cursor-default">
-                  <img
-                    src={skill.icon.startsWith('http') ? skill.icon : `https://cdn.simpleicons.org/${skill.icon}/71717a`}
-                    alt={skill.name}
-                    width={14}
-                    height={14}
-                    loading="lazy"
-                    decoding="async"
-                    className={`h-3.5 w-3.5 opacity-80 ${skill.icon.startsWith('http') ? 'rounded-sm grayscale' : ''}`}
-                  />
+                  {skill.icon === "cloud" ? (
+                    <Cloud className="h-3.5 w-3.5 opacity-80 text-[#71717a]" />
+                  ) : (
+                    <img
+                      src={skill.icon.startsWith('http') ? skill.icon : `https://cdn.simpleicons.org/${skill.icon}/71717a`}
+                      alt={skill.name}
+                      width={14}
+                      height={14}
+                      loading="lazy"
+                      decoding="async"
+                      className={`h-3.5 w-3.5 opacity-80 ${skill.icon.startsWith('http') ? 'rounded-sm grayscale' : ''}`}
+                    />
+                  )}
                   <span className="text-[13px] font-medium text-zinc-600 dark:text-zinc-400">{skill.name}</span>
                 </div>
               ))}
@@ -408,6 +434,66 @@ export default function Home() {
                 </svg>
               </div>
             </Link>
+          </div>
+        </div>
+
+        {/* Education */}
+        <div id="education" className="mt-6 flex flex-col relative z-10 scroll-mt-24">
+          {/* Top full-width line */}
+          <div
+            className="absolute top-0 left-[-100vw] right-[-100vw] h-0 border-t border-black/30 dark:border-white/[0.15] pointer-events-none"
+            style={{
+              maskImage: 'repeating-linear-gradient(to right, black 0, black 1px, transparent 1px, transparent 6px)',
+              WebkitMaskImage: 'repeating-linear-gradient(to right, black 0, black 1px, transparent 1px, transparent 6px)'
+            }}
+          />
+          <div className="absolute top-0 -left-4 w-[2px] h-[2px] bg-black/50 dark:bg-white/[0.25] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-20" />
+          <div className="absolute top-0 -right-4 w-[2px] h-[2px] bg-black/50 dark:bg-white/[0.25] translate-x-1/2 -translate-y-1/2 pointer-events-none z-20" />
+
+          <div className="py-2 relative mt-1">
+            <h2 className="text-[18px] font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Education</h2>
+
+            {/* Horizontal line below heading */}
+            <div className="absolute bottom-0 left-[-100vw] right-[-100vw] h-0 border-b border-black/30 dark:border-white/[0.15] pointer-events-none" style={{ maskImage: 'repeating-linear-gradient(to right, black 0, black 1px, transparent 1px, transparent 6px)', WebkitMaskImage: 'repeating-linear-gradient(to right, black 0, black 1px, transparent 1px, transparent 6px)' }} />
+            {/* Intersections */}
+            <div className="absolute bottom-0 -left-4 w-[2px] h-[2px] bg-black/50 dark:bg-white/[0.25] -translate-x-1/2 translate-y-1/2 pointer-events-none z-20" />
+            <div className="absolute bottom-0 -right-4 w-[2px] h-[2px] bg-black/50 dark:bg-white/[0.25] translate-x-1/2 translate-y-1/2 pointer-events-none z-20" />
+          </div>
+
+          <div className="py-4">
+            <div className="flex flex-col gap-0.5">
+              <h3 className="text-[14px] md:text-[15px] font-bold text-zinc-900 dark:text-zinc-100">
+                SRM Institute of Science and Technology
+              </h3>
+              <p className="text-[13px] text-zinc-500 dark:text-zinc-400">
+                Bachelor of Technology in Computer Science and Engineering
+              </p>
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 text-[13px] text-zinc-500 dark:text-zinc-400">
+                <span>2023 – 2027</span>
+                <span className="text-zinc-300 dark:text-zinc-700">·</span>
+                <span>CGPA: 9.01 / 10</span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2 mt-3">
+              {[
+                "Data Structures & Algorithms",
+                "Database Management Systems",
+                "Computer Networks",
+                "Operating Systems",
+                "Object-Oriented Programming",
+                "Software Engineering",
+                "Computer Architecture",
+                "Cloud Computing",
+              ].map((course) => (
+                <span
+                  key={course}
+                  className="px-2 py-0.5 rounded-[4px] border border-black/30 dark:border-white/[0.15] text-[11px] text-zinc-600 dark:text-zinc-400 bg-white/50 dark:bg-black/20"
+                >
+                  {course}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 

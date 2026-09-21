@@ -26,11 +26,11 @@ const socialProfiles: Record<string, SocialProfile> = {
     name: "Ayush Kumar",
     handle: "Ayush277",
     avatar: "https://github.com/Ayush277.png",
-    bio: "Final-year CS • ML & Backend Engineer",
+    bio: "CSE '27 • AI/ML & Full-Stack Engineer",
     location: "Chennai, India (UTC +05:30)",
     stats: [
-      { value: "200+", label: "Problems" },
-      { value: "9.0", label: "CGPA" },
+      { value: "250+", label: "Problems" },
+      { value: "9.01", label: "CGPA" },
     ],
   },
   LeetCode: {
@@ -38,10 +38,11 @@ const socialProfiles: Record<string, SocialProfile> = {
     handle: "Happy277",
     avatar: "https://github.com/Ayush277.png",
     banner: darkBannerImage,
-    bio: "200+ DSA problems across LeetCode & GeeksforGeeks",
+    bio: "250+ DSA problems across LeetCode, GeeksforGeeks & Codeforces",
     location: "Chennai, India (UTC +05:30)",
     stats: [
-      { value: "200+", label: "Solved" },
+      { value: "1596", label: "Peak Rating" },
+      { value: "250+", label: "Solved" },
     ],
   },
   LinkedIn: {
@@ -49,7 +50,7 @@ const socialProfiles: Record<string, SocialProfile> = {
     handle: "in/ayushkumar277",
     avatar: "https://github.com/Ayush277.png",
     banner: darkBannerImage,
-    bio: "Final-year CS • ML, Backend & Research",
+    bio: "CSE '27 • AI/ML, Full-Stack & Research",
     location: "Chennai, India",
     stats: [],
   },

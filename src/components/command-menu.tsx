@@ -14,7 +14,9 @@ import {
     CornerDownLeft,
     Copy,
     Briefcase,
-    BookOpen
+    BookOpen,
+    Trophy,
+    GraduationCap
 } from "lucide-react"
 import { SiGithub } from "react-icons/si"
 
@@ -176,6 +178,14 @@ export function CommandMenu() {
                             <span>Skills</span>
                             <CommandShortcut className="font-mono text-[10px] bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded border border-zinc-200 dark:border-zinc-700">shift + S</CommandShortcut>
                         </CommandItem>
+                        <CommandItem onSelect={() => runCommand(() => window.location.hash = "#achievements")} className="rounded-lg py-3 cursor-pointer">
+                            <Trophy className="mr-2 h-4 w-4 text-zinc-500" />
+                            <span>Achievements</span>
+                        </CommandItem>
+                        <CommandItem onSelect={() => runCommand(() => window.location.hash = "#education")} className="rounded-lg py-3 cursor-pointer">
+                            <GraduationCap className="mr-2 h-4 w-4 text-zinc-500" />
+                            <span>Education</span>
+                        </CommandItem>
                     </CommandGroup>
 
                     <CommandSeparator className="my-2" />
@@ -187,6 +197,26 @@ export function CommandMenu() {
                             <Copy className="mr-2 h-4 w-4 text-zinc-500" />
                             <span>Copy Link</span>
                             <CommandShortcut className="font-mono text-[10px] bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded border border-zinc-200 dark:border-zinc-700">shift + C</CommandShortcut>
+                        </CommandItem>
+                        <CommandItem onSelect={() => runCommand(() => openExternal("/resume"))} className="rounded-lg py-3 cursor-pointer">
+                            <FileText className="mr-2 h-4 w-4 text-zinc-500" />
+                            <span>Download Resume</span>
+                        </CommandItem>
+                        <CommandItem onSelect={() => runCommand(() => openExternal("mailto:prince908ayush@gmail.com"))} className="rounded-lg py-3 cursor-pointer">
+                            <Copy className="mr-2 h-4 w-4 text-zinc-500" />
+                            <span>Send Email</span>
+                        </CommandItem>
+                        <CommandItem onSelect={() => runCommand(() => openExternal("https://github.com/Ayush277"))} className="rounded-lg py-3 cursor-pointer">
+                            <SiGithub className="mr-2 h-4 w-4 text-zinc-500" />
+                            <span>View GitHub</span>
+                        </CommandItem>
+                        <CommandItem onSelect={() => runCommand(() => openExternal("https://leetcode.com/u/Happy277/"))} className="rounded-lg py-3 cursor-pointer">
+                            <Code className="mr-2 h-4 w-4 text-zinc-500" />
+                            <span>View LeetCode</span>
+                        </CommandItem>
+                        <CommandItem onSelect={() => runCommand(() => openExternal("https://www.linkedin.com/in/ayushkumar277"))} className="rounded-lg py-3 cursor-pointer">
+                            <Briefcase className="mr-2 h-4 w-4 text-zinc-500" />
+                            <span>View LinkedIn</span>
                         </CommandItem>
                     </CommandGroup>
 

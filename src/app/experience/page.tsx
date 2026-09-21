@@ -28,68 +28,24 @@ type ExperienceData = {
 const experiences: ExperienceData[] = [
   {
     title: "Samsung PRISM",
-    role: "Research Intern",
+    role: "Research & Development Intern",
     dates: "Mar 2025 - Aug 2025",
-    location: "Bengaluru, Hybrid",
+    location: "Bengaluru · Hybrid",
     src: "/Experience-image/samsung.svg",
     imageFit: "contain",
     imageZoom: 0.78,
     description: `
-      Predictive Modeling: Built models for delinquency risk, marketing performance and sales forecasting on 100K+ real-world business records
-      Accuracy: Improved prediction performance from 78% to 97% through feature engineering and experimentation
-      Decision Support: Developed workflows that turned raw business data into actionable insights across multiple use cases
-      Evaluation: Measured model performance with quantitative metrics and presented findings to stakeholders
+      Projects: Completed three machine learning projects, each involving 100K+ records, covering data collection, preparation, model development, evaluation and prediction
+      Workflows: Developed Python-based data processing workflows for business requirements by cleaning, organizing and processing datasets and applying classification and regression models
+      Evaluation: Compared Random Forest, XGBoost, CatBoost, Ridge and LightGBM using accuracy, precision, recall and RMSE to evaluate model performance across multiple use cases
+      Inference: Built, debugged and tested end-to-end ML inference workflows connecting processed data with model predictions for real-time business applications
     `,
-    tech: ["Python", "Machine Learning", "Data Analysis", "Feature Engineering", "Forecasting"],
+    tech: ["Python", "Machine Learning", "Classification", "Regression", "XGBoost", "CatBoost", "Random Forest", "LightGBM", "Ridge", "Data Processing"],
     metrics: [
       { label: "Records", value: "100K+" },
-      { label: "Accuracy", value: "78 - 97%" },
-      { label: "Term", value: "Mar-Aug" },
-      { label: "Domains", value: "3" },
-    ],
-  },
-  {
-    title: "resumerite",
-    role: "Backend Engineer Intern",
-    dates: "Sep 2025 - Apr 2026",
-    location: "Remote",
-    src: "/Experience-image/resumerite.svg",
-    imageFit: "contain",
-    imageZoom: 1,
-    description: `
-      Workflows: Built digital workflows that streamlined resume management and placement processes for students
-      Automation: Reduced manual administrative effort by automating document generation and tracking
-      Data Models: Designed scalable data models for user profiles, resumes and application records
-      Scale: Contributed to a platform supporting placement workflows for 10,000+ students annually
-      Collaboration: Worked closely with product, design and engineering teams to deliver user-focused solutions
-    `,
-    tech: ["FastAPI", "Python", "MongoDB", "REST APIs", "Docker"],
-    metrics: [
-      { label: "Students", value: "10,000+" },
-      { label: "Role", value: "Backend" },
-      { label: "Term", value: "Sep-Apr" },
-      { label: "Focus", value: "Data" },
-    ],
-  },
-  {
-    title: "Published Research",
-    role: "First Author & Reviewer, SMM4H-HeaRD 2026",
-    dates: "2026",
-    location: "Precision Agriculture",
-    src: "/Experience-image/openreview.svg",
-    imageFit: "contain",
-    imageZoom: 1,
-    description: `
-      Paper: Time-to-Stress Prediction in Precision Agriculture, a Dual-Head BiLSTM approach with SHAP-based temporal attention
-      Approach: Designed a dual-head BiLSTM with SHAP-based temporal attention for interpretable time-to-stress forecasting
-      Service: Selected as a Reviewer for SMM4H-HeaRD 2026
-    `,
-    tech: ["BiLSTM", "SHAP", "TensorFlow", "Deep Learning", "Time Series"],
-    metrics: [
-      { label: "Role", value: "First Author" },
-      { label: "Model", value: "BiLSTM" },
-      { label: "XAI", value: "SHAP" },
-      { label: "Venue", value: "SMM4H" },
+      { label: "ML Projects", value: "3" },
+      { label: "Models Evaluated", value: "5+" },
+      { label: "Term", value: "Mar–Aug 2025" },
     ],
   },
 ];

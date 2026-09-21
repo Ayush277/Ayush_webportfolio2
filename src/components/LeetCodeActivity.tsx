@@ -121,10 +121,17 @@ export function LeetCodeActivity() {
       <div className="absolute top-0 -right-4 z-20 size-[2px] translate-x-1/2 -translate-y-1/2 bg-black/50 pointer-events-none dark:bg-white/[0.25]" />
 
       <div className="relative py-2">
-        <div className="flex items-center justify-between gap-3">
-          <h2 id="leetcode-title" className="text-[18px] font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
-            LeetCode Activity
-          </h2>
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div className="flex items-baseline gap-2.5 flex-wrap">
+            <h2 id="leetcode-title" className="text-[18px] font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
+              LeetCode Activity
+            </h2>
+            <span className="hidden sm:inline text-[11px] text-zinc-500 dark:text-zinc-400">
+              Peak Rating: <span className="font-semibold text-zinc-700 dark:text-zinc-300">1596</span>
+              <span className="mx-1.5 text-zinc-300 dark:text-zinc-700">·</span>
+              Solved: <span className="font-semibold text-zinc-700 dark:text-zinc-300">250+</span>
+            </span>
+          </div>
           <a
             href={`https://leetcode.com/u/${LEETCODE_USER}/`}
             target="_blank"

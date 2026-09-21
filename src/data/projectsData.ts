@@ -21,13 +21,20 @@ import {
   SiWxt,
   SiGooglechrome,
   SiHuggingface,
+  SiDocker,
+  SiGooglegemini,
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiJson,
 } from "react-icons/si";
 
 export type TechIcon = ComponentType<{ className?: string }>;
 export type TechKey =
   | "next" | "ts" | "react" | "node" | "tailwind" | "fastapi" | "redis" | "celery"
   | "python" | "flask" | "sklearn" | "onnx" | "vercel" | "jupyter"
-  | "spring" | "java" | "gradle" | "postgres" | "wxt" | "chrome" | "huggingface";
+  | "spring" | "java" | "gradle" | "postgres" | "wxt" | "chrome" | "huggingface"
+  | "docker" | "gemini" | "html5" | "css3" | "javascript" | "json";
 
 export type TechItem = TechKey | { label: string; tooltip?: string; };
 
@@ -57,7 +64,8 @@ export const iconMap: Record<TechKey, TechIcon> = {
   python: SiPython, flask: SiFlask, sklearn: SiScikitlearn, onnx: SiOnnx,
   vercel: SiVercel, jupyter: SiJupyter, spring: SiSpring, java: SiOpenjdk,
   gradle: SiGradle, postgres: SiPostgresql, wxt: SiWxt, chrome: SiGooglechrome,
-  huggingface: SiHuggingface,
+  huggingface: SiHuggingface, docker: SiDocker, gemini: SiGooglegemini,
+  html5: SiHtml5, css3: SiCss, javascript: SiJavascript, json: SiJson,
 };
 
 export const techNames: Record<TechKey, string> = {
@@ -66,18 +74,34 @@ export const techNames: Record<TechKey, string> = {
   python: "Python", flask: "Flask", sklearn: "scikit-learn", onnx: "ONNX Runtime",
   vercel: "Vercel", jupyter: "Jupyter", spring: "Spring Boot", java: "Java 21",
   gradle: "Gradle", postgres: "PostgreSQL", wxt: "WXT", chrome: "Chrome Extension (MV3)",
-  huggingface: "transformers.js",
+  huggingface: "transformers.js", docker: "Docker", gemini: "Gemini API",
+  html5: "HTML5", css3: "CSS3", javascript: "JavaScript", json: "JSON",
 };
 
 export const projectsData: Project[] = [
   {
-    slug: "samsung-prism-worklet-8",
-    title: "Samsung PRISM — Worklet 8",
-    imageTitle: "Financing, Campaign & Sales Intelligence",
+    slug: "coverflow",
+    title: "CoverFlow",
+    imageTitle: "AI-Powered Card Benefit Activation Engine",
+    src: "/projects/coverflow.png",
+    video: "",
+    description: "AI-powered card benefit activation platform that monitors card transactions in real time, identifies qualifying protection benefits, and streamlines insurance claim processing end to end. REST API workflows handle benefit eligibility, transaction data and claim generation, while an OCR + LLM pipeline converts unstructured receipts into structured claim data — with real-time notifications through approval.",
+    tech: ["react", "node", "postgres", "redis", "docker", { label: "AWS", tooltip: "Amazon Web Services" }, "gemini", { label: "OCR", tooltip: "Optical Character Recognition" }],
+    github: "https://github.com/Ayush277/coverflow",
+    live: "https://coverflow-web-rose.vercel.app/",
+    docs: "",
+    status: "live",
+    backgroundImage: "/projects/coverflow-hero.png",
+    hasPin: true,
+  },
+  {
+    slug: "ai-business-analytics-platform",
+    title: "AI-Powered Business Analytics Platform",
+    imageTitle: "Decision Intelligence System",
     src: "/projects/samsung-dashboard.png",
     video: "",
-    description: "ML intelligence dashboard serving three trained models in real time — loan delinquency risk (RandomForest, AUC 0.72), campaign performance (CatBoost · LightGBM · Ridge) and sell-out forecasting (XGBoost). Models are exported to ONNX in CI with drift-verified builds and run live on Vercel.",
-    tech: ["python", "jupyter", "sklearn", "onnx", "flask", "vercel"],
+    description: "Unified business analytics platform combining forecasting, risk assessment, interactive dashboards and AI-powered recommendations across 100K+ business records. Sub-200ms REST API and JSON-driven workflows power automated reporting and interactive dashboard views, turning raw data into clear, actionable visualizations.",
+    tech: ["html5", "css3", "javascript", { label: "REST APIs", tooltip: "REST APIs" }, "json", "python", { label: "Machine Learning", tooltip: "Machine Learning" }, { label: "LLMs", tooltip: "Large Language Models" }],
     github: "https://github.com/Ayush277/Samsung-Dashboard-worklet-8",
     live: "https://samsung-dashboard-worklet-8.vercel.app",
     docs: "https://samsung-dashboard-worklet-8.vercel.app/docs",

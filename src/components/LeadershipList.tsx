@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Trophy, Users, FileText, Code2, Palette } from "lucide-react";
+import { Trophy, Users, FileText, Code2, Briefcase, Globe } from "lucide-react";
 
 type Item = {
   icon: React.ComponentType<{ className?: string }>;
@@ -14,35 +14,42 @@ const items: Item[] = [
   {
     icon: Trophy,
     title: "2× National Hackathon Winner",
-    description: "1st place at IntelliHack SRM and AIR 3 at the BITS Hyderabad All-India Hackathon.",
-    tags: ["1st · IntelliHack", "AIR 3 · BITS Hyderabad"],
-  },
-  {
-    icon: Users,
-    title: "Student Technology Organization Lead",
     description:
-      "Led a 100+ member organization for two years — recruitment, operations, event planning and cross-functional teams.",
-    tags: ["100+ members", "2 years"],
-  },
-  {
-    icon: FileText,
-    title: "Published Researcher & Reviewer",
-    description:
-      "Authored a Dual-Head BiLSTM with SHAP-based temporal attention. Selected as a Reviewer for SMM4H-HeaRD 2026.",
-    tags: ["First Author", "SMM4H-HeaRD 2026"],
+      "Won 2 national hackathons, including 1st Place at IntelliHack SRM and AIR 3 at the BITS Hyderabad All India Hackathon. Also Top 50 at Smart India Hackathon 2024–25 and SDE Finalist at Flipkart GRiD 8.0.",
+    tags: ["1st · IntelliHack SRM", "AIR 3 · BITS Hyderabad", "Top 50 · SIH 2024–25", "Finalist · Flipkart GRiD 8.0"],
   },
   {
     icon: Code2,
     title: "Competitive Programming",
-    description: "Solved 200+ algorithmic problems across LeetCode and GeeksforGeeks.",
-    tags: ["200+ solved", "DSA"],
+    description:
+      "Achieved a peak LeetCode Contest Rating of 1596 and solved 250+ DSA problems across LeetCode, GeeksforGeeks and Codeforces.",
+    tags: ["1596 peak rating", "250+ solved"],
   },
   {
-    icon: Palette,
-    title: "UI/UX & Graphic Design Freelancer",
+    icon: FileText,
+    title: "Research — Plant Stress Prediction",
     description:
-      "Delivered branding assets, design systems and digital experiences for startups and student organizations.",
-    tags: ["Branding", "Design Systems"],
+      "Co-authored “Plant Stress Prediction using Residual BiLSTM with Temporal Attention and SHAP-Based Explainability AI”, accepted for presentation at CEEE 2026.",
+    tags: ["CEEE 2026 · Paper #620", "91.98% accuracy", "92.82% macro F1"],
+  },
+  {
+    icon: Users,
+    title: "President — NSCC SRM",
+    description: "Led a 100+ member technical community.",
+    tags: ["100+ members"],
+  },
+  {
+    icon: Globe,
+    title: "Google Developer Groups Lead — 2024–25",
+    description: "Drove technical events and developer activities.",
+    tags: ["GDG Lead", "2024–25"],
+  },
+  {
+    icon: Briefcase,
+    title: "Freelance & Client Work",
+    description:
+      "Delivered software solutions for client requirements, working directly with clients to gather requirements, translate business needs into technical solutions, implement features, and handle feedback through delivery.",
+    tags: ["Client Delivery"],
   },
 ];
 
