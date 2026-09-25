@@ -68,6 +68,36 @@ export const iconMap: Record<TechKey, TechIcon> = {
   html5: SiHtml5, css3: SiCss, javascript: SiJavascript, json: SiJson,
 };
 
+export const techColors: Record<TechKey, string> = {
+  next: "text-zinc-900 dark:text-white",
+  ts: "text-[#3178C6]",
+  react: "text-[#61DAFB]",
+  node: "text-[#339933]",
+  tailwind: "text-[#06B6D4]",
+  fastapi: "text-[#009688]",
+  redis: "text-[#DC382D]",
+  celery: "text-[#37814A]",
+  python: "text-[#3776AB]",
+  flask: "text-zinc-900 dark:text-white",
+  sklearn: "text-[#F7931E]",
+  onnx: "text-[#005CED]",
+  vercel: "text-zinc-900 dark:text-white",
+  jupyter: "text-[#F37626]",
+  spring: "text-[#6DB33F]",
+  java: "text-[#437291]",
+  gradle: "text-[#02303A] dark:text-[#5FBEAF]",
+  postgres: "text-[#4169E1]",
+  wxt: "text-[#54BC4B]",
+  chrome: "text-[#4285F4]",
+  huggingface: "text-[#FFD21E]",
+  docker: "text-[#2496ED]",
+  gemini: "text-[#4796E3]",
+  html5: "text-[#E34F26]",
+  css3: "text-[#1572B6]",
+  javascript: "text-[#F7DF1E]",
+  json: "text-zinc-900 dark:text-white",
+};
+
 export const techNames: Record<TechKey, string> = {
   next: "Next.js", ts: "TypeScript", react: "React", node: "Node.js",
   tailwind: "Tailwind CSS", fastapi: "FastAPI", redis: "Redis", celery: "Celery",

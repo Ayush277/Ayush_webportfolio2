@@ -17,6 +17,7 @@ interface ContributionMonth {
 
 interface ContributionLevel {
   cell: string;
+  glow: string;
 }
 
 interface TooltipState {
@@ -127,18 +128,23 @@ export function GithubGraph() {
     () => [
       {
         cell: "bg-zinc-100 dark:bg-zinc-800",
+        glow: "",
       },
       {
-        cell: "bg-zinc-300 dark:bg-zinc-600",
+        cell: "bg-[#9be9a8] dark:bg-[#0e4429]",
+        glow: "shadow-[0_0_4px_rgba(64,196,99,0.5)] dark:shadow-[0_0_5px_rgba(14,68,41,0.9)]",
       },
       {
-        cell: "bg-zinc-500 dark:bg-zinc-500",
+        cell: "bg-[#40c463] dark:bg-[#006d32]",
+        glow: "shadow-[0_0_5px_rgba(64,196,99,0.65)] dark:shadow-[0_0_6px_rgba(0,109,50,0.95)]",
       },
       {
-        cell: "bg-zinc-700 dark:bg-zinc-300",
+        cell: "bg-[#30a14e] dark:bg-[#26a641]",
+        glow: "shadow-[0_0_6px_rgba(48,161,78,0.75)] dark:shadow-[0_0_8px_rgba(38,166,65,1)]",
       },
       {
-        cell: "bg-zinc-950 dark:bg-zinc-100",
+        cell: "bg-[#216e39] dark:bg-[#39d353]",
+        glow: "shadow-[0_0_7px_rgba(33,110,57,0.85)] dark:shadow-[0_0_10px_rgba(57,211,83,1)]",
       },
     ],
     []
@@ -207,9 +213,15 @@ export function GithubGraph() {
           <h2 id="github-activity-title" className="text-[18px] font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
             GitHub Activity
           </h2>
-          <p className="text-right text-[11px] text-zinc-500 dark:text-zinc-400" aria-live="polite">
+          <a
+            href="https://github.com/Ayush277"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-right text-[11px] text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
+            aria-live="polite"
+          >
             {graphStatus}
-          </p>
+          </a>
         </div>
 
         {/* Bottom full-width dashed line under heading */}
@@ -263,7 +275,7 @@ export function GithubGraph() {
                             key={day.date}
                             aria-hidden="true"
                             aria-label={`${day.contributionCount} contributions on ${formatDate(day.date)}`}
-                            className={`aspect-square w-full rounded-[2px] opacity-80 outline-none transition-[opacity,transform] hover:scale-125 hover:opacity-100 dark:opacity-70 dark:hover:opacity-100 ${color.cell}`}
+                            className={`aspect-square w-full rounded-[2px] opacity-80 outline-none transition-[opacity,transform] hover:scale-125 hover:opacity-100 dark:opacity-70 dark:hover:opacity-100 ${color.cell} ${color.glow}`}
                             onMouseEnter={(event) => showTooltip(day, event)}
                             onMouseLeave={() => setTooltip(null)}
                           />
@@ -288,7 +300,7 @@ export function GithubGraph() {
               <div
                 key={index}
                 aria-hidden="true"
-                className={`size-2 rounded-[2px] opacity-80 dark:opacity-70 ${level.cell}`}
+                className={`size-2 rounded-[2px] opacity-80 dark:opacity-70 ${level.cell} ${level.glow}`}
               />
             ))}
             <span className="text-[11px] text-zinc-500 dark:text-zinc-400">More active</span>

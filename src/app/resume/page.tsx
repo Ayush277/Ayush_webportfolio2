@@ -74,7 +74,7 @@ export default function ResumePage() {
         />
       ))}
 
-      <div className="pointer-events-auto absolute left-0 right-0 top-0 h-[22vh] md:left-[30%] md:right-[30%]">
+      <div className="pointer-events-auto absolute left-0 right-0 top-0 z-20 h-[22vh] md:left-[30%] md:right-[30%]">
         <FooterBackground />
         <div className="pointer-events-auto absolute bottom-3 right-2 z-10">
           <CurrentTime />
@@ -92,7 +92,7 @@ export default function ResumePage() {
               <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-0.5" />
             </Link>
             <div className="flex min-w-0 flex-col justify-center">
-              <h1 className="truncate text-[20px] font-bold leading-none text-zinc-800 [text-shadow:-1.5px_0_0_rgba(0,200,255,0.3),1.5px_0_0_rgba(255,80,0,0.3)] dark:text-zinc-100 dark:[text-shadow:-1.5px_0_0_rgba(0,200,255,0.6),1.5px_0_0_rgba(255,80,0,0.6)] sm:text-[24px]">
+              <h1 className="truncate text-[20px] font-bold leading-none text-zinc-800 dark:text-zinc-100 sm:text-[24px]">
                 Resume
               </h1>
               <p className="mt-1 truncate text-[12px] text-zinc-500 dark:text-zinc-400">
@@ -102,8 +102,8 @@ export default function ResumePage() {
           </div>
 
           <div className="flex h-20 shrink-0 items-start justify-end gap-2 py-1 sm:h-24 sm:gap-3">
-            <CommandMenu />
             <ThemeToggle className="dark:text-zinc-400 hover:dark:text-zinc-300" />
+            <CommandMenu />
           </div>
         </div>
       </header>

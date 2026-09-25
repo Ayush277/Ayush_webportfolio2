@@ -89,10 +89,20 @@ export function LeetCodeActivity() {
   const levels = useMemo(
     () => [
       "bg-zinc-100 dark:bg-zinc-800",
-      "bg-zinc-300 dark:bg-zinc-600",
-      "bg-zinc-500 dark:bg-zinc-500",
-      "bg-zinc-700 dark:bg-zinc-300",
-      "bg-zinc-950 dark:bg-zinc-100",
+      "bg-[#9be9a8] dark:bg-[#0e4429]",
+      "bg-[#40c463] dark:bg-[#006d32]",
+      "bg-[#30a14e] dark:bg-[#26a641]",
+      "bg-[#216e39] dark:bg-[#39d353]",
+    ],
+    [],
+  );
+  const levelGlows = useMemo(
+    () => [
+      "",
+      "shadow-[0_0_4px_rgba(64,196,99,0.5)] dark:shadow-[0_0_5px_rgba(14,68,41,0.9)]",
+      "shadow-[0_0_5px_rgba(64,196,99,0.65)] dark:shadow-[0_0_6px_rgba(0,109,50,0.95)]",
+      "shadow-[0_0_6px_rgba(48,161,78,0.75)] dark:shadow-[0_0_8px_rgba(38,166,65,1)]",
+      "shadow-[0_0_7px_rgba(33,110,57,0.85)] dark:shadow-[0_0_10px_rgba(57,211,83,1)]",
     ],
     [],
   );
@@ -158,7 +168,7 @@ export function LeetCodeActivity() {
               {week.map((day) => (
                 <div
                   key={day.date}
-                  className={`aspect-square w-full rounded-[2px] opacity-80 outline-none transition-[opacity,transform] hover:scale-125 hover:opacity-100 dark:opacity-70 dark:hover:opacity-100 ${levels[getLevel(day.count)]}`}
+                  className={`aspect-square w-full rounded-[2px] opacity-80 outline-none transition-[opacity,transform] hover:scale-125 hover:opacity-100 dark:opacity-70 dark:hover:opacity-100 ${levels[getLevel(day.count)]} ${levelGlows[getLevel(day.count)]}`}
                   onMouseEnter={(e) => showTip(day, e)}
                   onMouseLeave={() => setTooltip(null)}
                 />
@@ -171,7 +181,7 @@ export function LeetCodeActivity() {
           <span className="text-[11px] text-zinc-500 dark:text-zinc-400">Less active</span>
           <div className="flex shrink-0 items-center gap-1.5">
             {levels.map((l, i) => (
-              <div key={i} className={`size-2 rounded-[2px] opacity-80 dark:opacity-70 ${l}`} />
+              <div key={i} className={`size-2 rounded-[2px] opacity-80 dark:opacity-70 ${l} ${levelGlows[i]}`} />
             ))}
             <span className="text-[11px] text-zinc-500 dark:text-zinc-400">More active</span>
           </div>

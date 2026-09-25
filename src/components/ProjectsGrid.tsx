@@ -14,6 +14,7 @@ import {
   type Project,
   iconMap,
   techNames,
+  techColors,
   projectsData,
 } from "@/data/projectsData";
 
@@ -24,6 +25,7 @@ export {
   type Project,
   iconMap,
   techNames,
+  techColors,
   projectsData,
 };
 
@@ -183,7 +185,7 @@ export const ProjectCard = ({
                   {isIconItem ? (
                     (() => {
                       const TechIcon = iconMap[item];
-                      return <TechIcon className="w-4 h-4 md:w-3.5 md:h-3.5 text-zinc-400 dark:text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors" />;
+                      return <TechIcon className={`w-4 h-4 md:w-3.5 md:h-3.5 opacity-80 hover:opacity-100 transition-opacity ${techColors[item]}`} />;
                     })()
                   ) : (
                     <span className="px-1.5 py-0.5 rounded border border-black/30 dark:border-white/[0.15] text-[9px] text-zinc-500 dark:text-zinc-400 leading-none">

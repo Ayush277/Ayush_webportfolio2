@@ -41,7 +41,7 @@ export default function PullRequestsPage() {
       ))}
 
       {/* Cell 1: Dot Matrix Background */}
-      <div className="absolute left-0 right-0 md:left-[30%] md:right-[30%] top-0 h-[22vh] -z-0 pointer-events-auto">
+      <div className="absolute left-0 right-0 md:left-[30%] md:right-[30%] top-0 h-[22vh] z-20 pointer-events-auto">
         <FooterBackground />
         <div className="absolute bottom-3 right-2 z-10 pointer-events-auto">
           <CurrentTime />
@@ -60,7 +60,7 @@ export default function PullRequestsPage() {
               <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
             </Link>
             <div className="flex flex-col justify-center">
-              <h1 className="text-[20px] sm:text-[24px] font-bold text-zinc-800 dark:text-zinc-100 tracking-tight leading-none mb-0.5 [text-shadow:-1.5px_0_0_rgba(0,200,255,0.3),1.5px_0_0_rgba(255,80,0,0.3)] dark:[text-shadow:-1.5px_0_0_rgba(0,200,255,0.6),1.5px_0_0_rgba(255,80,0,0.6)]">
+              <h1 className="text-[20px] sm:text-[24px] font-bold text-zinc-800 dark:text-zinc-100 tracking-tight leading-none mb-0.5">
                 Pull Requests
               </h1>
               <p className="text-[12px] text-zinc-500 dark:text-zinc-400">
@@ -71,8 +71,8 @@ export default function PullRequestsPage() {
 
           {/* Right: Controls */}
           <div className="flex items-start justify-end gap-2 sm:gap-3 h-20 sm:h-24 py-1">
-            <CommandMenu />
             <ThemeToggle className="dark:text-zinc-400 hover:dark:text-zinc-300" />
+            <CommandMenu />
           </div>
         </div>
       </div>

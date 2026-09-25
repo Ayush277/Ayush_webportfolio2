@@ -3,7 +3,7 @@ import { CommandMenu } from "@/components/command-menu";
 import { CurrentTime } from "@/components/CurrentTime";
 import { RightNavbar } from "@/components/RightNavbar";
 import { FooterBackground } from "@/components/FooterBackground";
-import { projectsData, iconMap, techNames, TechItem, TechKey } from "@/data/projectsData";
+import { projectsData, iconMap, techNames, techColors, TechItem, TechKey } from "@/data/projectsData";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -54,7 +54,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       ))}
 
       {/* Cell 1: Dot Matrix Background */}
-      <div className="absolute left-0 right-0 md:left-[30%] md:right-[30%] top-0 h-[22vh] -z-0 pointer-events-auto">
+      <div className="absolute left-0 right-0 md:left-[30%] md:right-[30%] top-0 h-[22vh] z-20 pointer-events-auto">
         <FooterBackground />
         <div className="absolute bottom-3 right-2 z-10 pointer-events-auto">
           <CurrentTime />
@@ -73,7 +73,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
             </Link>
             <div className="flex flex-col justify-center">
-              <h1 className="text-[20px] sm:text-[24px] font-bold text-zinc-800 dark:text-zinc-100 tracking-tight leading-none mb-0.5 [text-shadow:-1.5px_0_0_rgba(0,200,255,0.3),1.5px_0_0_rgba(255,80,0,0.3)] dark:[text-shadow:-1.5px_0_0_rgba(0,200,255,0.6),1.5px_0_0_rgba(255,80,0,0.6)]">
+              <h1 className="text-[20px] sm:text-[24px] font-bold text-zinc-800 dark:text-zinc-100 tracking-tight leading-none mb-0.5">
                 {project.title}
               </h1>
               <p className="text-[12px] text-zinc-500 dark:text-zinc-400 font-medium">
@@ -84,8 +84,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
           {/* Right: Controls */}
           <div className="flex items-start justify-end gap-2 sm:gap-3 h-20 sm:h-24 py-1">
-            <CommandMenu />
             <ThemeToggle className="dark:text-zinc-400 hover:dark:text-zinc-300" />
+            <CommandMenu />
           </div>
         </div>
       </div>
@@ -205,10 +205,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               const isKey = typeof t === "string";
               const label = isKey ? techNames[t as TechKey] : t.label;
               const Icon = isKey ? iconMap[t as TechKey] : null;
+              const iconColor = isKey ? techColors[t as TechKey] : "";
 
               return (
                 <div key={i} className="flex items-center gap-1.5 px-3 py-1.5 bg-zinc-100 dark:bg-zinc-900 border border-black/10 dark:border-white/5 rounded-md text-[12px] font-medium text-zinc-700 dark:text-zinc-300">
-                  {Icon && <Icon className="w-3.5 h-3.5" />}
+                  {Icon && <Icon className={`w-3.5 h-3.5 ${iconColor}`} />}
                   <span>{label}</span>
                 </div>
               );

@@ -13,7 +13,9 @@ import Link from "next/link";
 import SoftPillButton from "@/components/pixel-perfect/soft-pill-button";
 import SocialHoverCard from "@/components/pixel-perfect/social-hover-card";
 import { BannerParticles } from "@/components/BannerParticles";
-import { FileText, Cloud } from "lucide-react";
+import { HeroStatsTicker } from "@/components/HeroStatsTicker";
+import { FileText, Cloud, Mail } from "lucide-react";
+import { SiGithub, SiLeetcode } from "react-icons/si";
 import Image from "next/image";
 
 const skills = [
@@ -27,9 +29,9 @@ const skills = [
   // Frameworks
   { name: "React", icon: "react" },
   { name: "Node.js", icon: "nodedotjs" },
-  { name: "Express.js", icon: "express" },
+  { name: "Express.js", icon: "express", color: "a1a1aa" },
   { name: "FastAPI", icon: "fastapi" },
-  { name: "Next.js", icon: "nextdotjs" },
+  { name: "Next.js", icon: "nextdotjs", color: "a1a1aa" },
   // Databases
   { name: "PostgreSQL", icon: "postgresql" },
   { name: "MongoDB", icon: "mongodb" },
@@ -41,7 +43,7 @@ const skills = [
   { name: "Jenkins", icon: "jenkins" },
   // Tools & Practices
   { name: "Git", icon: "git" },
-  { name: "GitHub", icon: "github" },
+  { name: "GitHub", icon: "github", color: "a1a1aa" },
   { name: "Postman", icon: "postman" },
 ];
 
@@ -77,7 +79,7 @@ export default function Home() {
       ))}
 
       {/* Cell 1: Banner */}
-      <div className="absolute left-0 right-0 md:left-[30%] md:right-[30%] top-0 h-[22vh] -z-0 pointer-events-auto overflow-hidden bg-white dark:bg-black shadow-[0_4px_12px_rgba(2,6,23,0.04)] dark:shadow-[0_4px_12px_rgba(2,6,23,0.10)]">
+      <div className="absolute left-0 right-0 md:left-[30%] md:right-[30%] top-0 h-[22vh] z-20 pointer-events-auto overflow-hidden bg-white dark:bg-black shadow-[0_4px_12px_rgba(2,6,23,0.04)] dark:shadow-[0_4px_12px_rgba(2,6,23,0.10)]">
         <Image
           src="/banner-light.jpg"
           alt=""
@@ -127,7 +129,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col justify-center pt-8">
-              <h1 className="text-[20px] sm:text-[24px] font-bold text-zinc-800 dark:text-zinc-100 tracking-tight leading-none mb-0.5 [text-shadow:-1.5px_0_0_rgba(0,200,255,0.3),1.5px_0_0_rgba(255,80,0,0.3)] dark:[text-shadow:-1.5px_0_0_rgba(0,200,255,0.6),1.5px_0_0_rgba(255,80,0,0.6)]">
+              <h1 className="text-[20px] sm:text-[24px] font-bold text-zinc-800 dark:text-zinc-100 tracking-tight leading-none mb-0.5">
                 Ayush Kumar
               </h1>
               <p className="text-[13px] sm:text-[14px] text-zinc-500 dark:text-zinc-400">CSE &apos;27 · SRM Chennai</p>
@@ -135,8 +137,8 @@ export default function Home() {
           </div>
 
           <div className="flex items-start justify-end gap-2 sm:gap-3 h-20 sm:h-24 py-1">
-            <CommandMenu />
             <ThemeToggle className="dark:text-zinc-400 hover:dark:text-zinc-300" />
+            <CommandMenu />
           </div>
 
         </div>
@@ -149,26 +151,14 @@ export default function Home() {
         </p>
 
         {/* Quick-profile stats */}
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mt-4">
-          {[
-            { value: "100K+", label: "Records" },
-            { value: "3", label: "ML Projects" },
-            { value: "250+", label: "DSA Problems" },
-            { value: "1596", label: "LeetCode Rating" },
-          ].map((stat, i) => (
-            <div key={i} className="flex items-baseline gap-1.5">
-              <span className="text-[14px] font-bold text-zinc-900 dark:text-zinc-100">{stat.value}</span>
-              <span className="text-[11px] text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">{stat.label}</span>
-            </div>
-          ))}
-        </div>
+        <HeroStatsTicker />
 
         {/* Buttons */}
         <div className="flex flex-wrap items-center gap-2 mt-4">
           <Link href="/contact">
             <SoftPillButton
               as="span"
-              variant="primary"
+              variant="accent"
               className="px-3 py-1.5 !text-[12px]"
             >
               <div className="flex items-center gap-1.5">
@@ -204,10 +194,30 @@ export default function Home() {
           <h2 className="text-[14px] text-zinc-500 mb-2">Here are my <span className="font-medium text-zinc-800 dark:text-zinc-200">socials</span></h2>
           <div className="flex flex-wrap gap-1.5">
             {[
-              { name: 'GitHub', href: 'https://github.com/Ayush277', icon: <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" strokeWidth="2" fill="none"></path> },
-              { name: 'LeetCode', href: 'https://leetcode.com/u/Happy277/', icon: <path d="M8.5 5.5 3 12l5.5 6.5M15 5l-5 14M16 9l3 3-3 3" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" /> },
-              { name: 'LinkedIn', href: 'https://www.linkedin.com/in/ayushkumar277', icon: <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1-2 2 2 2 0 0 1 2-2z" stroke="currentColor" strokeWidth="2" fill="none"></path> },
-              { name: 'Email', href: 'mailto:prince908ayush@gmail.com', icon: <><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" fill="none"></path><polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" fill="none"></polyline></> },
+              {
+                name: 'GitHub',
+                href: 'https://github.com/Ayush277',
+                icon: <SiGithub className="w-3.5 h-3.5 text-zinc-900 dark:text-white" />,
+              },
+              {
+                name: 'LeetCode',
+                href: 'https://leetcode.com/u/Happy277/',
+                icon: <SiLeetcode className="w-3.5 h-3.5 text-[#FFA116]" />,
+              },
+              {
+                name: 'LinkedIn',
+                href: 'https://www.linkedin.com/in/ayushkumar277',
+                icon: (
+                  <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 text-[#0A66C2]" fill="currentColor">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1-2 2 2 2 0 0 1 2-2z" />
+                  </svg>
+                ),
+              },
+              {
+                name: 'Email',
+                href: 'mailto:prince908ayush@gmail.com',
+                icon: <Mail className="w-3.5 h-3.5 text-[#EA4335]" />,
+              },
             ].map((social, i) => (
               <SocialHoverCard key={i} socialName={social.name}>
                 <SoftPillButton
@@ -218,10 +228,8 @@ export default function Home() {
                   variant="secondary"
                   className="px-3 py-1.5 !text-[12px]"
                 >
-                  <div className="flex items-center gap-1.5 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg viewBox="0 0 24 24" className="w-3.5 h-3.5">
-                      {social.icon}
-                    </svg>
+                  <div className="flex items-center gap-1.5">
+                    {social.icon}
                     {social.name}
                   </div>
                 </SoftPillButton>
@@ -372,16 +380,16 @@ export default function Home() {
               {skills.map((skill, index) => (
                 <div key={index} className="grow flex items-center justify-center gap-2 px-3 py-1.5 bg-zinc-50 hover:bg-zinc-100 dark:bg-[#0a0a0a] dark:hover:bg-[#121214] border border-black/30 dark:border-white/[0.15] rounded-[6px] transition-colors duration-200 cursor-default">
                   {skill.icon === "cloud" ? (
-                    <Cloud className="h-3.5 w-3.5 opacity-80 text-[#71717a]" />
+                    <Cloud className="h-3.5 w-3.5 text-[#FF9900]" />
                   ) : (
                     <img
-                      src={skill.icon.startsWith('http') ? skill.icon : `https://cdn.simpleicons.org/${skill.icon}/71717a`}
+                      src={skill.icon.startsWith('http') ? skill.icon : `https://cdn.simpleicons.org/${skill.icon}${'color' in skill ? `/${skill.color}` : ''}`}
                       alt={skill.name}
                       width={14}
                       height={14}
                       loading="lazy"
                       decoding="async"
-                      className={`h-3.5 w-3.5 opacity-80 ${skill.icon.startsWith('http') ? 'rounded-sm grayscale' : ''}`}
+                      className={`h-3.5 w-3.5 ${skill.icon.startsWith('http') ? 'rounded-sm' : ''}`}
                     />
                   )}
                   <span className="text-[13px] font-medium text-zinc-600 dark:text-zinc-400">{skill.name}</span>
