@@ -99,10 +99,10 @@ export function LeetCodeActivity() {
   const levelGlows = useMemo(
     () => [
       "",
-      "shadow-[0_0_4px_rgba(64,196,99,0.5)] dark:shadow-[0_0_5px_rgba(14,68,41,0.9)]",
-      "shadow-[0_0_5px_rgba(64,196,99,0.65)] dark:shadow-[0_0_6px_rgba(0,109,50,0.95)]",
-      "shadow-[0_0_6px_rgba(48,161,78,0.75)] dark:shadow-[0_0_8px_rgba(38,166,65,1)]",
-      "shadow-[0_0_7px_rgba(33,110,57,0.85)] dark:shadow-[0_0_10px_rgba(57,211,83,1)]",
+      "dark:shadow-[0_0_2px_rgba(14,68,41,0.6)]",
+      "dark:shadow-[0_0_2.5px_rgba(0,109,50,0.65)]",
+      "dark:shadow-[0_0_3px_rgba(38,166,65,0.7)]",
+      "dark:shadow-[0_0_4px_rgba(57,211,83,0.75)]",
     ],
     [],
   );

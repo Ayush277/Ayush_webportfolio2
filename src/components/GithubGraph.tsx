@@ -132,19 +132,19 @@ export function GithubGraph() {
       },
       {
         cell: "bg-[#9be9a8] dark:bg-[#0e4429]",
-        glow: "shadow-[0_0_4px_rgba(64,196,99,0.5)] dark:shadow-[0_0_5px_rgba(14,68,41,0.9)]",
+        glow: "dark:shadow-[0_0_2px_rgba(14,68,41,0.6)]",
       },
       {
         cell: "bg-[#40c463] dark:bg-[#006d32]",
-        glow: "shadow-[0_0_5px_rgba(64,196,99,0.65)] dark:shadow-[0_0_6px_rgba(0,109,50,0.95)]",
+        glow: "dark:shadow-[0_0_2.5px_rgba(0,109,50,0.65)]",
       },
       {
         cell: "bg-[#30a14e] dark:bg-[#26a641]",
-        glow: "shadow-[0_0_6px_rgba(48,161,78,0.75)] dark:shadow-[0_0_8px_rgba(38,166,65,1)]",
+        glow: "dark:shadow-[0_0_3px_rgba(38,166,65,0.7)]",
       },
       {
         cell: "bg-[#216e39] dark:bg-[#39d353]",
-        glow: "shadow-[0_0_7px_rgba(33,110,57,0.85)] dark:shadow-[0_0_10px_rgba(57,211,83,1)]",
+        glow: "dark:shadow-[0_0_4px_rgba(57,211,83,0.75)]",
       },
     ],
     []
@@ -211,7 +211,14 @@ export function GithubGraph() {
       <div className="relative py-2">
         <div className="flex items-center justify-between gap-3">
           <h2 id="github-activity-title" className="text-[18px] font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
-            GitHub Activity
+            <a
+              href="https://github.com/Ayush277"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors"
+            >
+              GitHub Activity
+            </a>
           </h2>
           <a
             href="https://github.com/Ayush277"
