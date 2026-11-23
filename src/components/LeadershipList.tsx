@@ -13,9 +13,9 @@ type Item = {
 const items: Item[] = [
   {
     icon: Trophy,
-    title: "3× Hackathon Winner · Flipkart GRiD 8.0 Finalist",
+    title: "2× Hackathon Winner · Flipkart GRiD 8.0 Finalist",
     description:
-      "Won 3 hackathons, including 1st Place at IntelliHack SRM and AIR 3 at the BITS Hyderabad All India Hackathon. Also Top 50 at Smart India Hackathon 2024–25 and SDE Finalist at Flipkart GRiD 8.0.",
+      "Won 2 national hackathons, including 1st Place at IntelliHack SRM and AIR 3 at the BITS Hyderabad All India Hackathon. Also Top 50 at Smart India Hackathon 2024–25 and SDE Finalist at Flipkart GRiD 8.0.",
     tags: ["1st · IntelliHack SRM", "AIR 3 · BITS Hyderabad", "Top 50 · SIH 2024–25", "Finalist · Flipkart GRiD 8.0"],
   },
   {
