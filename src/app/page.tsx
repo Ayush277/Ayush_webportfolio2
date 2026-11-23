@@ -147,11 +147,33 @@ export default function Home() {
       {/* Flowing Content Section */}
       <div className="ml-0 mr-0 md:ml-[30%] md:mr-[30%] pt-[calc(22vh+112px)] pb-0 px-4 flex flex-col z-10 relative min-h-screen">
         <p className="text-[14px] sm:text-[15px] text-zinc-600 dark:text-zinc-300 leading-relaxed mt-4">
-          Software Engineer | AI/ML | Full-Stack Development | Samsung PRISM R&amp;D Intern | 2&times; National Hackathon Winner
+          Software Engineer | AI/ML | Full-Stack Development | Samsung PRISM R&amp;D Intern | 3&times; Hackathon Winner | Flipkart GRiD 8.0 Finalist
         </p>
 
         {/* Quick-profile stats */}
         <HeroStatsTicker />
+
+        {/* Freelance availability */}
+        <div className="mt-4 rounded-lg border border-black/10 bg-zinc-50/80 px-3.5 py-3 dark:border-white/10 dark:bg-[#09090b]/80">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+            </span>
+            <span className="text-[13px] font-semibold text-zinc-800 dark:text-zinc-100">
+              Open for freelance projects
+            </span>
+            <span className="rounded-full border border-zinc-200/60 px-2 py-0.5 text-[10px] font-medium text-zinc-500 dark:border-zinc-800/60 dark:text-zinc-400">
+              Design work
+            </span>
+          </div>
+          <p className="mt-1.5 text-[12.5px] leading-relaxed text-zinc-500 dark:text-zinc-400">
+            Freelance gig: design work, <span className="font-semibold text-zinc-700 dark:text-zinc-200">$210</span> earned so far. Ready to take on freelance projects.{" "}
+            <Link href="/contact" className="font-medium text-zinc-800 underline underline-offset-2 hover:text-zinc-600 dark:text-zinc-100 dark:hover:text-zinc-300">
+              Contact me
+            </Link>
+          </p>
+        </div>
 
         {/* Buttons */}
         <div className="flex flex-wrap items-center gap-2 mt-4">

@@ -21,7 +21,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ### Environment
 
-The GitHub contribution graph needs a token. Create `.env.local`:
+The GitHub contribution graph works without a token (public feed fallback). For the official GraphQL data, create `.env.local`:
 
 ```
 GITHUB_TOKEN=your_personal_access_token
@@ -36,7 +36,8 @@ Most content lives in:
 - `src/app/page.tsx` — profile, bio, socials, skills
 - `src/components/ExperienceList.tsx` — experience entries
 - `src/data/projectsData.ts` — projects
-- `public/` — images, logos, and `AyushKumar_Resume.pdf`
+- `public/` — images, logos, and `AyushKumar_Resume.pdf` (replace this file to update the resume; the /resume preview and its open-in-new-tab link use it automatically)
+- `public/projects/*-site.png` — project covers; regenerate with `swiftc -o snap scripts/snap.swift && ./snap <url> <out.png>`
 
 ## Connect
 

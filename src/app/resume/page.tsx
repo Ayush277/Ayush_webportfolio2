@@ -155,16 +155,35 @@ export default function ResumePage() {
           </div>
         </div>
 
-        <div className="relative aspect-[8.5/11] w-full overflow-hidden rounded-[6px] border border-black/10 bg-white shadow-sm dark:border-white/10">
-          <Image
-            src="/resume-placeholder.svg"
-            alt="Ayush Kumar resume"
-            fill
-            preload
-            sizes="(min-width: 768px) 40vw, 100vw"
-            quality={75}
-            className="object-contain"
-          />
+        <div className="group relative aspect-[8.5/11] w-full overflow-hidden rounded-[6px] border border-black/10 bg-white shadow-sm dark:border-white/10">
+          {/* Live preview of the PDF; replacing public/AyushKumar_Resume.pdf updates it automatically */}
+          <object
+            data={`${resumePath}#toolbar=0&navpanes=0&view=FitH`}
+            type="application/pdf"
+            aria-label="Ayush Kumar resume preview"
+            className="absolute inset-0 h-full w-full"
+          >
+            <Image
+              src="/resume-placeholder.svg"
+              alt="Ayush Kumar resume"
+              fill
+              sizes="(min-width: 768px) 40vw, 100vw"
+              className="object-contain"
+            />
+          </object>
+          {/* Click anywhere on the preview to open the full PDF in a new tab */}
+          <a
+            href={resumePath}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open resume in a new tab"
+            className="absolute inset-0 z-10 flex cursor-pointer items-end justify-center bg-transparent p-4 transition-colors hover:bg-black/[0.03] dark:hover:bg-white/[0.04]"
+          >
+            <span className="flex items-center gap-1.5 rounded-full border border-black/10 bg-white/90 px-3 py-1.5 text-[12px] font-medium text-zinc-700 opacity-0 shadow-sm backdrop-blur transition-opacity group-hover:opacity-100 dark:border-white/10 dark:bg-zinc-900/90 dark:text-zinc-200">
+              <ExternalLink className="h-3.5 w-3.5" />
+              Open in new tab
+            </span>
+          </a>
         </div>
 
         <div className="relative mt-8">

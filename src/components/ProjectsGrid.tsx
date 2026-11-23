@@ -39,7 +39,6 @@ export const ProjectCard = ({
   isPriority?: boolean;
 }) => {
   const [hoveredTech, setHoveredTech] = useState<string | null>(null);
-  const [shouldLoadHoverImage, setShouldLoadHoverImage] = useState(false);
   const { resolvedTheme } = useTheme();
   const router = useRouter();
 
@@ -52,16 +51,10 @@ export const ProjectCard = ({
     <div
       className="flex flex-col group cursor-pointer"
       onClick={() => router.push(`/projects/${project.slug}`)}
-      onMouseEnter={() => setShouldLoadHoverImage(true)}
-      onFocus={() => setShouldLoadHoverImage(true)}
-      onTouchStart={() => setShouldLoadHoverImage(true)}
     >
       {/* Outer Wrapper exactly like screenshot */}
       <motion.div
         className="relative w-full aspect-[1.25] rounded-xl border border-black/5 dark:border-white/5 bg-zinc-50/80 dark:bg-[#09090b]/80 shadow-sm p-3.5 pb-0 flex flex-col overflow-hidden transition-all duration-300 hover:shadow-md hover:border-black/10 dark:hover:border-white/10 sm:aspect-[1.4] sm:p-4 sm:pb-0"
-        initial="rest"
-        whileHover="hover"
-        animate="rest"
       >
         <div className="flex items-center justify-end z-10 min-h-[24px]">
           {project.hasPin && (
@@ -72,24 +65,6 @@ export const ProjectCard = ({
             </div>
           )}
         </div>
-
-        {/* Ambient Hover Background */}
-        <motion.div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: shouldLoadHoverImage
-              && project.backgroundImage
-              ? `url('${project.backgroundImage}')`
-              : undefined,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          variants={{
-            rest: { opacity: 0, scale: 1 },
-            hover: { opacity: 1, scale: 1.05 },
-          }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-        />
 
         {project.video && (
           <motion.div
@@ -112,15 +87,8 @@ export const ProjectCard = ({
         )}
 
         {/* Floating screenshot sitting directly at the bottom of the outer wrapper */}
-        <motion.div
-          className="absolute bottom-0 left-1/2 w-[85%] rounded-t-[10px] bg-white dark:bg-[#0a0a0a] p-0 shadow-[0_-8px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_-8px_30px_rgba(0,0,0,0.5)] z-20 border border-black/5 dark:border-white/[0.15] border-b-0"
-          variants={{
-            rest: { height: "78%", y: 0, x: "-50%" },
-            hover: { height: "72%", y: 4, x: "-50%" },
-          }}
-          transition={{ type: "spring", stiffness: 260, damping: 20 }}
-        >
-          <div className="flex size-full items-center justify-center overflow-hidden rounded-t-[9px] bg-zinc-50 p-4 text-center dark:bg-[#0a0a0a]">
+        <div className="absolute bottom-0 left-1/2 h-[78%] w-[85%] -translate-x-1/2 rounded-t-[10px] bg-white dark:bg-[#0a0a0a] p-0 shadow-[0_-8px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_-8px_30px_rgba(0,0,0,0.5)] z-20 border border-black/5 dark:border-white/[0.15] border-b-0">
+          <div className="flex size-full items-center justify-center overflow-hidden rounded-t-[9px] bg-zinc-50 text-center dark:bg-[#0a0a0a]">
             {imageSrc ? (
               <Image
                 src={imageSrc}
@@ -130,7 +98,7 @@ export const ProjectCard = ({
                 preload={isPriority}
                 sizes="(min-width: 768px) 17vw, calc(100vw - 2rem)"
                 quality={70}
-                className="size-full object-cover"
+                className="size-full object-cover object-top"
               />
             ) : (
               <span className="text-[13px] font-semibold text-zinc-400 dark:text-zinc-500">
@@ -138,7 +106,7 @@ export const ProjectCard = ({
               </span>
             )}
           </div>
-        </motion.div>
+        </div>
       </motion.div>
 
       {/* Content Area directly below the wrapper */}

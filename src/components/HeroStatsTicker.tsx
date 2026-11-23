@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const stats = [
   { value: "100K+", label: "Records" },
   { value: "3", label: "ML Projects" },
-  { value: "250+", label: "DSA Problems" },
+  { value: "300+", label: "DSA Problems" },
   { value: "1596", label: "LeetCode Rating" },
 ];
 

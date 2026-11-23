@@ -139,7 +139,7 @@ export function LeetCodeActivity() {
             <span className="hidden sm:inline text-[11px] text-zinc-500 dark:text-zinc-400">
               Peak Rating: <span className="font-semibold text-zinc-700 dark:text-zinc-300">1596</span>
               <span className="mx-1.5 text-zinc-300 dark:text-zinc-700">·</span>
-              Solved: <span className="font-semibold text-zinc-700 dark:text-zinc-300">250+</span>
+              Solved: <span className="font-semibold text-zinc-700 dark:text-zinc-300">300+</span>
             </span>
           </div>
           <a

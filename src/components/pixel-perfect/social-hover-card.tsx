@@ -29,7 +29,7 @@ const socialProfiles: Record<string, SocialProfile> = {
     bio: "CSE '27 • AI/ML & Full-Stack Engineer",
     location: "Chennai, India (UTC +05:30)",
     stats: [
-      { value: "250+", label: "Problems" },
+      { value: "300+", label: "Problems" },
       { value: "9.01", label: "CGPA" },
     ],
   },
@@ -38,11 +38,11 @@ const socialProfiles: Record<string, SocialProfile> = {
     handle: "Happy277",
     avatar: "https://github.com/Ayush277.png",
     banner: darkBannerImage,
-    bio: "250+ DSA problems across LeetCode, GeeksforGeeks & Codeforces",
+    bio: "300+ DSA problems across LeetCode, GeeksforGeeks & Codeforces",
     location: "Chennai, India (UTC +05:30)",
     stats: [
       { value: "1596", label: "Peak Rating" },
-      { value: "250+", label: "Solved" },
+      { value: "300+", label: "Solved" },
     ],
   },
   LinkedIn: {
